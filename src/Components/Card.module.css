@@ -1,0 +1,41 @@
+.Card {
+    display: flex;
+    background: #52565f;
+    border: 2px solid black;
+    width: 400px;
+    max-height: 165px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.Card:hover {
+    cursor: pointer;
+    border-color: chocolate;
+    background-color: rgb(172, 154, 236);
+}
+
+.Status {
+    font-weight: bold;
+}
+
+
+.Alive {
+    color: greenyellow;
+}
+
+.Dead {
+    color: red;
+}
+
+.Unknown {
+    color: gray;
+}
+
+.Image {
+    width: 80px;
+    height: 80px;
+    border-radius: 45px;
+    margin: auto 10px;
+}

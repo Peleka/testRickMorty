@@ -1,0 +1,17 @@
+.Header {
+    background-color: #c3c7ce;
+    font-size: calc(10px + 2vmin);
+    color: #000;
+}
+
+.Input {
+    margin: 32px 25px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(158, 243, 203);
+    font-size: 20px;
+}
+.container {
+    max-width: 1046px;
+    margin: 0 auto;
+}
