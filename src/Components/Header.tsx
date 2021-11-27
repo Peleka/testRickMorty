@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent, useEffect, useState} from "react";
 import '../App.css'
 import s from './Header.module.css'
 import {useDispatch} from "react-redux";
@@ -7,18 +7,27 @@ import {getCardsTC} from "../BLL/reducer";
 export const Header = () => {
     const [currentInputValue, setCurrentInputValue] = useState("");
 
-    const dispatch = useDispatch()
-    //@ts-ignore
-    const onChangeInputHandler = (event) => {
-        setCurrentInputValue(event.target.value);
-    }
-
     useEffect(() => {
         dispatch(getCardsTC())
     }, [])
+    const dispatch = useDispatch()
+
+    const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        setCurrentInputValue(event.target.value)
+    }
+
+    const onKeyPressInputHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === "Enter") {
+            dispatch(getCardsTC(currentInputValue))
+        }
+    }
+
+    const filterName = () => {
+        dispatch(getCardsTC(currentInputValue))
+    }
 
 
-    // @ts-ignore
+// @ts-ignore
     return (
         <header className={s.Header}>
             <div className={s.container}>
@@ -29,12 +38,15 @@ export const Header = () => {
                 <div>
                     <input
                         onChange={onChangeInputHandler}
+                        onBlur={filterName}
+                        onKeyPress={onKeyPressInputHandler}
                         value={currentInputValue}
                         className={s.Input}
                         type="text"
-                        placeholder="Введите номер серии"
+                        placeholder="Поиск по имени"
+                        autoFocus={true}
                     />
-                    {/\D/.test(currentInputValue) ? <span>"Введите число"</span> : ""}
+                    {/*{/\D/.test(currentInputValue) ? <span>Введите число</span> : ""}*/}
                 </div>
             </div>
         </header>
