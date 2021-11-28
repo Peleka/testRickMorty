@@ -1,6 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useEffect, useState} from "react";
-import '../App.css'
-import s from './Header.module.css'
+
+import s from './Header.module.scss'
 import {useDispatch} from "react-redux";
 import {getCardsTC} from "../BLL/reducer";
 
@@ -29,7 +29,7 @@ export const Header = () => {
 
 // @ts-ignore
     return (
-        <header className={s.Header}>
+        <header className={s.header}>
             <div className={s.container}>
                 <div>
                     <h1>RICK & MORTY</h1>
@@ -41,7 +41,7 @@ export const Header = () => {
                         onBlur={filterName}
                         onKeyPress={onKeyPressInputHandler}
                         value={currentInputValue}
-                        className={s.Input}
+                        className={s.input}
                         type="text"
                         placeholder="Поиск по имени"
                         autoFocus={true}

@@ -1,6 +1,5 @@
 import React, {ChangeEvent} from "react";
-import '../App.css'
-import classes from './Header.module.css'
+import s from '../App.module.scss';
 import {Card} from "./Card";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../BLL/store";
@@ -17,8 +16,6 @@ export const Main = () => {
     const totalCharacterCount = useSelector((state: AppStoreType) => state.cards.totalCharacterCount)
     const status = ["alive", "dead", "unknown"]
 
-    // const {id} = useParams<{id: number}>()
-
     //pagination
     let pagesCount = Math.ceil(totalCharacterCount / pageSize)
 
@@ -34,14 +31,14 @@ export const Main = () => {
     }
 
     return (
-        <div className={classes.container}>
-            <div className={"Flex_wrapper"}>
+        <div className={s.container}>
+            <div className={s.flex_wrapper}>
                 <div>
                     {status.map(st => {
                         return (
                             <button
                                 onClick={(e) => filteredStatus(st)}
-                                className={"Button"}
+                                className={s.button}
                             >{st.toUpperCase()}</button>
                         )
                     })}
@@ -55,7 +52,7 @@ export const Main = () => {
                         boundaryCount={1}   //Number of always visible pages at the beginning and end.
                         defaultPage={1}
                         onChange={(e: ChangeEvent<any>, p: number) => onChangeCurrentPage(p)} //event: The event source of the callback.
-                                                                                              //page: The page selected.
+                        //page: The page selected.
                     />
                 </div>
 
@@ -63,10 +60,13 @@ export const Main = () => {
             <div>
                 <h1>В базе Вселенной удалось найти: </h1>
                 {data
-                    ? <div className={"grid_wrapper"}>
+                    ? <div className={s.charactersCards}>
                         {
                             //@ts-ignore
-                            data.map((item) => (<Card card={item} key={item.id}/>))}
+                            data.map((item) => (<Card
+                                card={item}
+                                key={item.id}
+                            />))}
                     </div>
                     : <div>
                         <p>В базе пока нет эпизода под таким номером</p>
