@@ -9,7 +9,7 @@ export const Card = (props: any) => {
             <img src={image} className={s.image} alt="avatar"/>
             <div>
                 <div style={{cursor: "pointer"}}>
-                    <p>{name}</p>
+                    <p className={s.name}>{name}</p>
                     <span className={s.status}>{status}</span>
                 </div>
                 <div>Категория: {species}</div>
