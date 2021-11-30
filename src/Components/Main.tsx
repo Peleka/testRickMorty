@@ -47,7 +47,6 @@ export const Main = () => {
                     <Pagination
                         count={pagesCount}     //The total number of pages.
                         variant="outlined"
-                        color="secondary"
                         page={currentPage}  //The current page.
                         boundaryCount={1}   //Number of always visible pages at the beginning and end.
                         defaultPage={1}

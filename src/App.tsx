@@ -5,9 +5,11 @@ import {Main} from "./Components/Main";
 
 function App() {
   return (
-    <div className={s.container}>
+    <div>
       <Header/>
-      <Main/>
+        <div className={s.main}>
+            <Main/>
+        </div>
     </div>
   );
 }
