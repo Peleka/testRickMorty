@@ -1,6 +1,7 @@
 .card {
     box-sizing: border-box;
     display: flex;
+    justify-content: start;
     flex: 0 1 45%;
     overflow: hidden;
     background: #3c3e44;
@@ -10,6 +11,10 @@
     border-radius: 8px;
     color: white;
     font-size: 14px;
+    
+    @media (max-width: 900px) {
+        flex: 0 1 100%;
+    }
 
     &:hover {
         cursor: pointer;
@@ -19,8 +24,10 @@
     .image {
         width: 200px;
         height: 180px;
+        margin-right: 20px;
     }
     .name {
+        padding-top: 15px;
         font-weight: 700;
         font-size: 24px;
         line-height: 133%;
@@ -31,16 +38,14 @@
     font-weight: bold;
 }
 
-
 .alive {
-    color: greenyellow;
+    color: #7ad077;
 }
 
 .dead {
-    color: red;
+    color: #f57777;
 }
 
 .unknown {
     color: gray;
 }
-

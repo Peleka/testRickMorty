@@ -5,7 +5,7 @@ import {Main} from "./Components/Main";
 
 function App() {
   return (
-    <div className={s.wrapper}>
+    <div className={s.container}>
       <Header/>
       <Main/>
     </div>
