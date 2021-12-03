@@ -12,13 +12,19 @@
   .flex_wrapper {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 20px;
   }
 
-  .charactersCards {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  .blockCards {
+    color: white;
+
+    .charactersCards {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 20px;
+    }
   }
 }
 
@@ -26,9 +32,9 @@
   display: inline-block;
   cursor: pointer;
   margin: 5px;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
-  background: #c9cecd;
+  background: #a47ce3;
 }
 
 .selected {
@@ -36,5 +42,5 @@
 }
 
 .main {
-  background-color: #a1a2a3;
+  background-color: #abb4f3;
 }

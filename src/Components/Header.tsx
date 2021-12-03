@@ -1,5 +1,4 @@
 import React, {ChangeEvent, KeyboardEvent, useEffect, useState} from "react";
-
 import s from './Header.module.scss'
 import {useDispatch} from "react-redux";
 import {getCardsTC} from "../BLL/reducer";
@@ -32,7 +31,7 @@ export const Header = () => {
         <header className={s.header}>
             <div className={s.container}>
                 <div>
-                    <h1>RICK & MORTY</h1>
+                    <h1 className={s.title}>RICK & MORTY</h1>
                     <p>Hero database </p>
                 </div>
                 <div>

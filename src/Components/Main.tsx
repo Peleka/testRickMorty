@@ -9,7 +9,6 @@ import {getCardsTC, setCurrentPageAC, setFilteredStatus} from "../BLL/reducer";
 export const Main = () => {
 
     const dispatch = useDispatch()
-    //@ts-ignore
     const data = useSelector((state: AppStoreType) => state.cards.data)
     const currentPage = useSelector((state: AppStoreType) => state.cards.currentPage)
     const pageSize = useSelector((state: AppStoreType) => state.cards.pageSize)
@@ -54,10 +53,9 @@ export const Main = () => {
                         //page: The page selected.
                     />
                 </div>
-
             </div>
-            <div>
-                <h1>В базе Вселенной удалось найти: </h1>
+            <div className={s.blockCards}>
+                <h2>В базе Вселенной удалось найти: </h2>
                 {data
                     ? <div className={s.charactersCards}>
                         {
